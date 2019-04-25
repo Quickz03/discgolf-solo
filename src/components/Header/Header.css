@@ -1,0 +1,14 @@
+.title {
+    text-align: center;
+    color: red;
+}
+
+.header {
+    align-content: center;
+    color: blue;
+}
+
+.title {
+    align-content: center;
+    /* color: green; */
+}

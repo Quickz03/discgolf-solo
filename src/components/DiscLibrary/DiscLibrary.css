@@ -1,0 +1,15 @@
+.DiscLibTable, th, tr, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tr:hover {
+    background-color: #faf30e;
+}
+
