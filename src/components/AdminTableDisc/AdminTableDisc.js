@@ -5,6 +5,8 @@ import AdminTableItem from '../AdminTableItem/AdminTableItem';
 
 
 
+
+
 class AdminTableDisc extends Component {
 
     componentDidMount() {
@@ -23,11 +25,24 @@ class AdminTableDisc extends Component {
                         <th>Fade</th>
                         <th>Plastic</th>
                         <th>Type</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
-                <tbody>
-
-                </tbody>
+                    <tbody>
+                        {
+                        this.props.reduxState.discs.map(disc =>
+                            <tr key={disc.id}>
+                                <td>{disc.name}</td>
+                                <td>{disc.speed}</td>
+                                <td>{disc.glide}</td>
+                                <td>{disc.turn}</td>
+                                <td>{disc.fade}</td>
+                                <td>{disc.plastic}</td>
+                                <td>{disc.type}</td>
+                                <AdminTableItem disc={disc} />
+                            </tr>
+                        )}
+                    </tbody>
             </table>
         );
     }

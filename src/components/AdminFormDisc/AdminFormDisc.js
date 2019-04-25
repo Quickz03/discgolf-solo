@@ -15,7 +15,8 @@ const emptyDisc = {
     glide: '',
     turn: '',
     fade: '',
-    disc_type: '',
+    type: '',
+    image: '',
 }
 
 class AdminFormDisc extends Component {
@@ -29,7 +30,9 @@ class AdminFormDisc extends Component {
             glide: '',
             turn: '',
             fade: '',
-            disc_type: '',
+            type: '',
+            image: '',
+
         }
     }
 
@@ -71,9 +74,9 @@ class AdminFormDisc extends Component {
                     <input type="text" placeholder="Disc Image" name="image"
                             onChange={this.handleChange} />
                     <select onChange={this.handleChange} name="type" >
-                        <option selected disabled >Select a Type</option>
-                        {this.props.reduxState.types.map( type => 
-                            <option  value={type.id} key={type.id}>{type.name}</option>
+                        <option>Select a Type</option>
+                            {this.props.reduxState.types.map( type => 
+                                <option value={type.id} key={type.id}>{type.name}</option>
                             )}
                     </select>
                     <br />
@@ -82,11 +85,15 @@ class AdminFormDisc extends Component {
                     <input type="text" placeholder="Glide" name="glide"
                             onChange={this.handleChange} />
                     <br />
+                    <input type="text" placeholder="Turn" name="turn"
+                            onChange={this.handleChange} />
+                    <br />
                     <input type="text" placeholder="Fade" name="fade"
                             onChange={this.handleChange} />
                     <br />
                     <button type="submit" >Add Disc</button>
                 </form>
+                <pre>{JSON.stringify(this.state)}</pre>
             </div>
         );
     }

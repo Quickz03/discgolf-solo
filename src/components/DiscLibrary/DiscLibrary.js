@@ -14,9 +14,11 @@ class DiscLibrary extends Component {
             <h1>Disc Library</h1>
         </div>
           <div className="DiscImage">
-            <img src="/images/ApeDisc.png" />
+            <img src="/images/ApeDisc.png" alt="''" />
             <br />
-            <button>add disc</button>
+            <div className="buttonZone">
+            <button className='addButton'>add disc</button>
+            </div>
           </div>
         {/* <div className="DiscLibTable"> */}
         <br />
@@ -40,15 +42,18 @@ class DiscLibrary extends Component {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Ape</td>
-                <td>13</td>
-                <td>5</td>
-                <td>0</td>
-                <td>-2</td>
-                <td>Premium</td>
-                <td>Driver</td>
-              </tr>
+              {
+              this.props.reduxState.discs.map(disc =>
+                  <tr key={disc.id}>
+                      <td>{disc.name}</td>
+                      <td>{disc.speed}</td>
+                      <td>{disc.glide}</td>
+                      <td>{disc.turn}</td>
+                      <td>{disc.fade}</td>
+                      <td>{disc.plastic}</td>
+                      <td>{disc.type}</td>
+                  </tr>
+              )}
             </tbody>
           </table>
         {/* </div> */}

@@ -57,8 +57,8 @@ router.get('/types', (req, res) => {
             newDisc.turn,
             newDisc.fade,
             newDisc.plastic,
-            newDisc.type_id,
-            newDisc.disc_image,
+            newDisc.type,
+            newDisc.image,
         ];
         pool.query(queryText, queryValues)
             .then(() => {

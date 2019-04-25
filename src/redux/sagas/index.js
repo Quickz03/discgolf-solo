@@ -4,7 +4,7 @@ import registrationSaga from './registrationSaga';
 import userSaga from './userSaga';
 import getDiscsSaga from './getDiscsSaga';
 import getDiscTypeSaga from './getDiscTypeSaga';
-// import postDiscSaga from './postDiscSaga';
+import postDiscSaga from './postDiscSaga';
 
 
 // rootSaga is the primary saga.
@@ -21,6 +21,6 @@ export default function* rootSaga() {
     userSaga(),
     getDiscsSaga(),
     getDiscTypeSaga(),
-    // postDiscSaga(),
+    postDiscSaga(),
   ]);
 }

@@ -17,7 +17,7 @@ class MyInventory extends Component {
       <h1>My Inventory</h1>
   </div>
   <div className="MyDiscImage">
-    <img src="images/ApeDisc.png" />
+    <img src="images/ApeDisc.png" alt="''" />
     <br/>
     <h4>Ape</h4>
   </div>

@@ -53,15 +53,21 @@ class App extends Component {
               path="/disclibrary"
               component={DiscLibrary}
             />
-            {/* If none of the other routes matched, we will show a 404. */}
-            <Route render={() => <h1>404</h1>} />
-          </Switch>
-          <Footer />
+
             <Route
               exact
               path="/admin"
               component={AdminDisc}
             /> 
+            {/* If none of the other routes matched, we will show a 404. */}
+            {/* <Route render={() => <h1>404</h1>} /> */}
+          </Switch>
+          <Footer />
+            {/* <Route
+              exact
+              path="/admin"
+              component={AdminDisc}
+            />  */}
         </div>
       </Router>
   )}
