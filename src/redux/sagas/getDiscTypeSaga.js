@@ -1,4 +1,4 @@
-import { put, takeEvery} from 'redux-saga/effects';
+import { put, } from 'redux-saga/effects';
 import axios from 'axios';
 
 
@@ -17,8 +17,8 @@ function* getTypes(action) {
 } // end getTypes
 
 
-function* getTypesSaga() {
-    yield takeEvery('GET_TYPES', getTypes);
-}
+// function* getTypes() {
+//     yield takeEvery('GET_TYPES', getTypes);
+// }
 
-export default getTypesSaga;
+export default getTypes;

@@ -8,7 +8,7 @@ class AdminTable extends Component {
         console.log( `in deleteDisc` );
         // TODO DELETE disc item from DB
         let id = event.target.value;
-        this.props.dispatch( { type: 'DELETE_DISC', payload: id } );
+        this.props.dispatch( { type: 'DELETE_DISCS', payload: id } );
     }
     
     render(){

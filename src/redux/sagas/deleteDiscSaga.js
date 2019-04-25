@@ -3,16 +3,23 @@ import axios from 'axios';
 
 
 function* deleteDisc(action) {
-    console.log('Hit the deleteProject', action);
+    console.log('Hit the deleteDisc', action);
     try {
-        // Attempt deleting project, then calling getProjectList
-        yield axios.delete(`/portfolio/${action.payload}`);
+        // Attempt deleting disc, then calling getDisc
+        yield axios.delete(`/api/discs/${action.payload}`);
         yield put({
-            type: 'GET_PROJECTS'
+            type: 'GET_DISCS'
         });
     } catch (error) {
         // Log and alert if an error occurs
-        console.log(`Couldn't delete project`, error);
-        alert(`Sorry, couldn't delete your project. Try again later`);
+        console.log(`Couldn't delete disc`, error);
+        alert(`Sorry, couldn't delete your disc. Try again later`);
     }
 }
+
+
+function* deleteDiscSaga() {
+    yield takeEvery('DELETE_DISCS', deleteDisc);
+}
+
+export default deleteDiscSaga;
