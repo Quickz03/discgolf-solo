@@ -10,17 +10,19 @@ import './MyInventory.css';
 // or even care what the redux state is, so it doesn't need 'connect()'
 
 class MyInventory extends Component {
+
+
   render() {
     return (
   <>
-  <div>
-      <h1>My Inventory</h1>
-  </div>
-  <div className="MyDiscImage">
-    <img src="images/ApeDisc.png" alt="''" />
-    <br/>
-    <h4>Ape</h4>
-  </div>
+    <div>
+        <h1>My Inventory</h1>
+    </div>
+    <div className="MyDiscImage">
+      <img src="images/ApeDisc.png" alt="''" />
+      <br/>
+      <h4>Ape</h4>
+    </div>
   {/* <div className="DiscLibTable"> */}
   <br />
   <br />
@@ -35,7 +37,7 @@ class MyInventory extends Component {
         <tr>
           <th>Name</th>
           <th>Speed</th>
-          <th> Glide</th>
+          <th>Glide</th>
           <th>Turn</th>
           <th>Fade</th>
           <th>Plastic</th>

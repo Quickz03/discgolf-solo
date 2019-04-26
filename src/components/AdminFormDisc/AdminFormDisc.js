@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import '../App/App.css';
 
-// import Button from '@material-ui/core/Button'
-// import TextField from '@material-ui/core/TextField';
-// import Typography from '@material-ui/core/Typography'
-
+import Button from '@material-ui/core/Button'
+import TextField from '@material-ui/core/TextField';
+import Typography from '@material-ui/core/Typography'
+import Select from '@material-ui/core/Select';
+import InputLabel from '@material-ui/core/InputLabel';
+import Input from '@material-ui/core/Input';
+import Form from '@material-ui/core/FormControl';
 
 const emptyDisc = {
     name: '',
@@ -15,7 +18,6 @@ const emptyDisc = {
     glide: '',
     turn: '',
     fade: '',
-    type: '',
     image: '',
 }
 
@@ -30,9 +32,7 @@ class AdminFormDisc extends Component {
             glide: '',
             turn: '',
             fade: '',
-            type: '',
             image: '',
-
         }
     }
 
@@ -65,34 +65,40 @@ class AdminFormDisc extends Component {
     render(){
         return(
             <div>
-            <h1>Admin Disc</h1>
-                <form onSubmit={this.handleSubmit} >
-                    <input type="text" placeholder="Disc Name" name="name"
+                <Typography variant="headline">Admin Disc</Typography>
+                <Form onSubmit={this.handleSubmit} >
+                    <TextField type="text" placeholder="Disc Name" name="name"
                             onChange={this.handleChange} />
-                    <input type="text" placeholder="Plastic" name="plastic"
+                    <br /> 
+                    <TextField type="text" placeholder="Plastic" name="plastic"
                             onChange={this.handleChange} />
-                    <input type="text" placeholder="Disc Image" name="image"
+                    <br /> 
+                    <TextField type="text" placeholder="Disc Image" name="image"
                             onChange={this.handleChange} />
-                    <select onChange={this.handleChange} name="type" >
-                        <option >Select a Type</option>
+                    <br />        
+                    <Select onChange={this.handleChange} name="type" 
+                            >
+                        <InputLabel htmlFor="type">Select a Type</InputLabel>
                             {this.props.reduxState.types.map( discType => 
                                 <option value={discType.id} key={discType.id}>{discType.name}</option>
                             )}
-                    </select>
+                    </Select>
                     <br />
-                    <input type="text" placeholder="Speed" name="speed"
+                    <TextField type="text" placeholder="Speed" name="speed"
                             onChange={this.handleChange} />
-                    <input type="text" placeholder="Glide" name="glide"
-                            onChange={this.handleChange} />
-                    <br />
-                    <input type="text" placeholder="Turn" name="turn"
+                    <br /> 
+                    <TextField type="text" placeholder="Glide" name="glide"
                             onChange={this.handleChange} />
                     <br />
-                    <input type="text" placeholder="Fade" name="fade"
+                    <TextField type="text" placeholder="Turn" name="turn"
                             onChange={this.handleChange} />
                     <br />
-                    <button type="submit" >Add Disc</button>
-                </form>
+                    <TextField type="text" placeholder="Fade" name="fade"
+                            onChange={this.handleChange} />
+                    <br />
+                    <br /> 
+                    <Button color="secondary" variant="contained" type="submit" >Add Disc</Button>
+                </Form>
                 <pre>{JSON.stringify(this.state)}</pre>
             </div>
         );

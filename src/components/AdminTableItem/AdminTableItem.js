@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import '../App/App.css';
+import Button from '@material-ui/core/Button'
+import TableCell from '@material-ui/core/TableCell';
+
+
 
 class AdminTable extends Component {
 
@@ -13,9 +17,9 @@ class AdminTable extends Component {
     
     render(){
         return(
-                <td>
-                    <button onClick={this.deleteDisc} value={this.props.disc.id}>Delete!</button>
-                </td>
+                <TableCell>
+                    <Button color="primary" variant="contained"  onClick={this.deleteDisc} value={this.props.disc.id}>Delete!</Button>
+                </TableCell>
         );
     }
 }

@@ -26,10 +26,14 @@ const Nav = (props) => (
         </>
       )}
       {/* Always show this link since the about page is not protected */}
+      {props.user.id && (
       <Link className="nav-link" to="/myinventory">
         My Inventory
       </Link>
+      )}
+      {props.user.id && (
         <LogOutButton className="nav-link"/>
+      )}
     </div>
   </div>
 );

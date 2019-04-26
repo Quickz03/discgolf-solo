@@ -7,6 +7,12 @@ import './DiscLibrary.css';
 
 
 class DiscLibrary extends Component {
+
+
+    componentDidMount() {
+        this.props.dispatch( {type: 'GET_DISCS'} );
+    }
+    
   render() {
     return (
       <>
@@ -34,7 +40,7 @@ class DiscLibrary extends Component {
               <tr>
                 <th>Name</th>
                 <th>Speed</th>
-                <th> Glide</th>
+                <th>Glide</th>
                 <th>Turn</th>
                 <th>Fade</th>
                 <th>Plastic</th>
