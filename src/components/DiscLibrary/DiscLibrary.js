@@ -2,6 +2,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import './DiscLibrary.css';
+import ReactDOM from 'react-dom';
 
 
 
@@ -12,18 +13,31 @@ class DiscLibrary extends Component {
     componentDidMount() {
         this.props.dispatch( {type: 'GET_DISCS'} );
     }
-    
+
+    addDiscToInv = () => {
+      console.log('adding to my inventory');
+    }
+
+    showDisc = () => {
+      console.log('showing disc');
+      console.log('disc data:', this.props.reduxState.discs);
+      
+      ReactDOM.render( <p>example</p>, document.getElementById('DiscImage') );
+    }
+
   render() {
+    console.log('this.props', this.props);
+    
     return (
       <>
         <div>
             <h1>Disc Library</h1>
         </div>
-          <div className="DiscImage">
+          <div id="DiscImage">
             <img src="/images/ApeDisc.png" alt="''" />
             <br />
             <div className="buttonZone">
-            <button className='addButton'>add disc</button>
+            <button className='addButton' onClick={this.addDiscToInv}>add disc</button>
             </div>
           </div>
         {/* <div className="DiscLibTable"> */}
@@ -34,7 +48,6 @@ class DiscLibrary extends Component {
         <br />
         <br />
         <br /> 
-
           <table className="DiscLibTable" align="center">
             <thead>
               <tr>
@@ -50,7 +63,7 @@ class DiscLibrary extends Component {
             <tbody>
               {
               this.props.reduxState.discs.map(disc =>
-                  <tr key={disc.id}>
+                  <tr key={disc.id} onClick={this.showDisc}>
                       <td>{disc.name}</td>
                       <td>{disc.speed}</td>
                       <td>{disc.glide}</td>

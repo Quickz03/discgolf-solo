@@ -27,4 +27,4 @@ const mapReduxStateToProps = (reduxState) => ({
     reduxState,
   });
   
-  export default connect( mapReduxStateToProps )(AdminDisc);
+  export default connect(mapReduxStateToProps)(AdminDisc);

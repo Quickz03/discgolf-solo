@@ -6,6 +6,8 @@ import getDiscsSaga from './getDiscsSaga';
 import getDiscTypeSaga from './getDiscTypeSaga';
 import postDiscSaga from './postDiscSaga';
 import deleteDiscSaga from './deleteDiscSaga';
+import getMyDiscsSaga from './getDiscMyInvSaga';
+import addMyDiscSaga from './addDiscMyInvSaga';
 
 
 // rootSaga is the primary saga.
@@ -24,5 +26,7 @@ export default function* rootSaga() {
     getDiscTypeSaga(),
     postDiscSaga(),
     deleteDiscSaga(),
+    getMyDiscsSaga(),
+    addMyDiscSaga(),
   ]);
 }

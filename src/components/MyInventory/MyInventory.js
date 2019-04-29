@@ -45,15 +45,18 @@ class MyInventory extends Component {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Ape</td>
-          <td>13</td>
-          <td>5</td>
-          <td>0</td>
-          <td>-2</td>
-          <td>Premium</td>
-          <td>Driver</td>
-        </tr>
+              {
+              this.props.reduxState.mydiscs.map(mydisc =>
+                  <tr key={mydisc.id} onClick={this.showDisc}>
+                      <td>{mydisc.name}</td>
+                      <td>{mydisc.speed}</td>
+                      <td>{mydisc.glide}</td>
+                      <td>{mydisc.turn}</td>
+                      <td>{mydisc.fade}</td>
+                      <td>{mydisc.plastic}</td>
+                      <td>{mydisc.type}</td>
+                  </tr>
+              )}
       </tbody>
     </table>
   {/* </div> */}

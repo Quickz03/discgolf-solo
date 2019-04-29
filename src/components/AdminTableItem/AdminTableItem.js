@@ -6,9 +6,10 @@ import TableCell from '@material-ui/core/TableCell';
 
 
 
-class AdminTable extends Component {
+class AdminTableDelete extends Component {
 
     deleteDisc = (event) => {
+        console.log(event);
         console.log( `in deleteDisc` );
         // TODO DELETE disc item from DB
         let id = event.target.value;
@@ -16,10 +17,11 @@ class AdminTable extends Component {
     }
     
     render(){
+        console.log('this.props:', this.props );
         return(
-                <TableCell>
-                    <Button color="primary" variant="contained"  onClick={this.deleteDisc} value={this.props.disc.id}>Delete!</Button>
-                </TableCell>
+                <td>
+                    <button color="primary" variant="contained"  onClick={this.deleteDisc} value={this.props.disc.id}>Delete!</button>
+                </td>
         );
     }
 }
@@ -30,4 +32,4 @@ const mapReduxStateToProps = (reduxState) => ({
     reduxState,
   });
   
-export default connect( mapReduxStateToProps )(AdminTable);
+export default connect(mapReduxStateToProps)(AdminTableDelete);

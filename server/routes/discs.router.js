@@ -7,7 +7,8 @@ const router = express.Router();
  */
 router.get('/', (req, res) => {
     // return all categories
-    const queryText = `SELECT "disc_library"."id", "disc_library"."name" as "name", 
+    const queryText = `SELECT "disc_library"."id", 
+    "disc_library"."name" as "name", 
     "disc_library"."speed" as "speed", 
     "disc_library"."glide" as "glide",
     "disc_library"."turn" as "turn",
@@ -79,5 +80,25 @@ router.get('/types', (req, res) => {
               res.sendStatus(500);
           })
       });
+
+
+         router.post('/', (req, res) => {
+             const myNewDisc = req.body;
+             const queryText = `INSERT INTO my_inventory ("user_id", "disc_id")
+                            VALUES ($1, $2)`;
+             const queryValues = [
+                 myNewDisc.user_id,
+                 myNewDisc.disc_id,
+             ];
+             pool.query(queryText, queryValues)
+                 .then(() => {
+                     res.sendStatus(201);
+                 })
+                 .catch((err) => {
+                     console.log('Error completing SELECT disc query', err);
+                     res.sendStatus(500);
+                 });
+         });
+    
 
 module.exports = router;
