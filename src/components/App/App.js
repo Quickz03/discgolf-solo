@@ -14,8 +14,8 @@ import Home from '../Home/Home';
 import DiscLibrary from '../DiscLibrary/DiscLibrary';
 import AdminDisc from '../AdminDisc/AdminDisc';
 
-import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
-import theme from '../App/theme';
+// import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+// import theme from '../App/theme';
 
 import './App.css';
 
@@ -26,9 +26,9 @@ class App extends Component {
 
   render() {
     return (
-        <MuiThemeProvider theme={theme}>
+        // <MuiThemeProvider theme={theme}>
       <Router>
-        <div>
+        <div className="AppDiv">
           <Header />
           <Nav />
           <Switch>
@@ -64,9 +64,9 @@ class App extends Component {
               component={AdminDisc}
             /> 
             {/* If none of the other routes matched, we will show a 404. */}
-            {/* <Route render={() => <h1>404</h1>} /> */}
+            <Route render={() => <h1>404</h1>} />
           </Switch>
-          <Footer />
+          {/* <Footer /> */}
             {/* <Route
               exact
               path="/admin"
@@ -74,7 +74,7 @@ class App extends Component {
             />  */}
         </div>
       </Router>
-      </MuiThemeProvider>
+      // </MuiThemeProvider>
   )}
 }
 

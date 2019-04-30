@@ -14,15 +14,20 @@ class DiscLibrary extends Component {
         this.props.dispatch( {type: 'GET_DISCS'} );
     }
 
-    addDiscToInv = () => {
+
+
+    addDiscToInv = (disc) => {
       console.log('adding to my inventory');
+      console.log(disc);
+      
+      let action = { type: "ADD_MY_DISCS", payload: disc };
+        this.props.dispatch(action);
     }
 
     showDisc = () => {
       console.log('showing disc');
-      console.log('disc data:', this.props.reduxState.discs);
-      
-      ReactDOM.render( <p>example</p>, document.getElementById('DiscImage') );
+      console.log('disc data:', this.props.reduxState.discs);    
+      ReactDOM.render( <p><img src="/images/BossDisc.png" alt="''" /></p>, document.getElementById('DiscImage') );
     }
 
   render() {
@@ -37,7 +42,7 @@ class DiscLibrary extends Component {
             <img src="/images/ApeDisc.png" alt="''" />
             <br />
             <div className="buttonZone">
-            <button className='addButton' onClick={this.addDiscToInv}>add disc</button>
+            {/* <button className='addButton' onClick={this.addDiscToInv}>Add Disc</button> */}
             </div>
           </div>
         {/* <div className="DiscLibTable"> */}
@@ -58,12 +63,15 @@ class DiscLibrary extends Component {
                 <th>Fade</th>
                 <th>Plastic</th>
                 <th>Type</th>
+                <th>My Inventory</th>
               </tr>
             </thead>
             <tbody>
               {
-              this.props.reduxState.discs.map(disc =>
-                  <tr key={disc.id} onClick={this.showDisc}>
+              this.props.reduxState.discs.map((disc, i) =>
+                  <tr key={disc.id} 
+                  // onClick={this.showDisc}
+                  >
                       <td>{disc.name}</td>
                       <td>{disc.speed}</td>
                       <td>{disc.glide}</td>
@@ -71,6 +79,7 @@ class DiscLibrary extends Component {
                       <td>{disc.fade}</td>
                       <td>{disc.plastic}</td>
                       <td>{disc.type}</td>
+                      <td><button className='addButton' onClick={() => this.addDiscToInv(disc)}>Add Disc</button></td>
                   </tr>
               )}
             </tbody>

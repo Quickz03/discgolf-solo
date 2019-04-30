@@ -6,21 +6,23 @@ import '../App/App.css';
 
 
 
-class AdminTableDelete extends Component {
+class MyInventoryDelete extends Component {
 
-    deleteDisc = (event) => {
-        console.log(event);
+
+
+    deleteMyDisc = (event) => {
+        console.log('mydelete', event);
         console.log( `in deleteDisc` );
-        // TODO DELETE disc item from DB
+        // TODO DELETE disc item from my_inventory DB
         let id = event.target.value;
-        this.props.dispatch( { type: 'DELETE_DISCS', payload: id } );
+        this.props.dispatch( { type: 'DELETE_MY_DISCS', payload: id } );
     }
     
     render(){
-        console.log('this.props:', this.props );
+        console.log('this.props mydelete:', this.props );
         return(
                 <td>
-                    <button color="primary" variant="contained"  onClick={this.deleteDisc} value={this.props.disc.id}>Delete!</button>
+                    <button onClick={this.deleteMyDisc} value={this.props.disc}>Delete!</button>
                 </td>
         );
     }
@@ -32,4 +34,4 @@ const mapReduxStateToProps = (reduxState) => ({
     reduxState,
   });
   
-export default connect(mapReduxStateToProps)(AdminTableDelete);
+export default connect(mapReduxStateToProps)(MyInventoryDelete);

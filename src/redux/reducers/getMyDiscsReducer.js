@@ -3,8 +3,10 @@
 // Used to store discs returned from the server
 const mydiscs = (state = [], action) => {
     switch (action.type) {
-        case 'GET_MY_DISCS':
-            return action.payload;
+        case 'SET_MY_DISCS':
+        console.log('in mydisc reducer', action.payload);
+            state= [...state, action.payload]
+            return state;
         default:
             return state;
     }

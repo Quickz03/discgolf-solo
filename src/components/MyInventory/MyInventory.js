@@ -2,15 +2,18 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import './MyInventory.css';
+import MyInventoryDelete from '../MyInventoryDelete/MyInventoryDelete';
 
 
-// This is one of our simplest components
-// It doesn't have local state, so it can be a function component.
-// It doesn't dispatch any redux actions or display any part of redux state
-// or even care what the redux state is, so it doesn't need 'connect()'
 
 class MyInventory extends Component {
 
+    //   componentDidMount() {
+    //     this.props.dispatch( {type: 'SET_MY_DISCS'} );
+    // }
+
+
+    
 
   render() {
     return (
@@ -42,12 +45,15 @@ class MyInventory extends Component {
           <th>Fade</th>
           <th>Plastic</th>
           <th>Type</th>
+          <th>Delete</th>
         </tr>
       </thead>
       <tbody>
               {
               this.props.reduxState.mydiscs.map(mydisc =>
-                  <tr key={mydisc.id} onClick={this.showDisc}>
+                  <tr key={mydisc.id} 
+                  // onClick={this.showDisc}
+                  >
                       <td>{mydisc.name}</td>
                       <td>{mydisc.speed}</td>
                       <td>{mydisc.glide}</td>
@@ -55,6 +61,8 @@ class MyInventory extends Component {
                       <td>{mydisc.fade}</td>
                       <td>{mydisc.plastic}</td>
                       <td>{mydisc.type}</td>
+                      <MyInventoryDelete mydisc={mydisc} />
+
                   </tr>
               )}
       </tbody>

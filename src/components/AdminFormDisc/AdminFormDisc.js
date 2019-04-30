@@ -83,7 +83,7 @@ class AdminFormDisc extends Component {
         // const { classes } = this.props;
         return(
             <div>
-                <h2>Admin Disc</h2>
+                <h2 className="adminHead">Admin Disc</h2>
                 <form onSubmit={this.handleSubmit} >
                     <input type="text" placeholder="Disc Name" name="name"
                             onChange={this.handleChange} />

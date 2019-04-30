@@ -46,12 +46,13 @@ class AdminTableDisc extends Component {
                 <th>Fade</th>
                 <th>Plastic</th>
                 <th>Type</th>
+                <th>Delete</th>
               </tr>
             </thead>
             <tbody>
               {
               this.props.reduxState.discs.map(disc =>
-                  <tr key={disc.id} onClick={this.showDisc}>
+                  <tr key={disc.id} disc={disc}>
                       <td>{disc.name}</td>
                       <td>{disc.speed}</td>
                       <td>{disc.glide}</td>
@@ -59,6 +60,7 @@ class AdminTableDisc extends Component {
                       <td>{disc.fade}</td>
                       <td>{disc.plastic}</td>
                       <td>{disc.type}</td>
+                      <AdminTableItem disc={disc} />
                   </tr>
               )}
             </tbody>

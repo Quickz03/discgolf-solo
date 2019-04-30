@@ -82,13 +82,18 @@ router.get('/types', (req, res) => {
       });
 
 
-         router.post('/', (req, res) => {
+         router.post('/myinventory', (req, res) => {
              const myNewDisc = req.body;
              const queryText = `INSERT INTO my_inventory ("user_id", "disc_id")
-                            VALUES ($1, $2)`;
+                                    VALUES ($1, $2)
+                            `;
+            console.log('req user id', req.user.id)
+            console.log('req.body', req.body);
+            ;
+            
              const queryValues = [
-                 myNewDisc.user_id,
-                 myNewDisc.disc_id,
+                req.user.id,
+                 myNewDisc.id,
              ];
              pool.query(queryText, queryValues)
                  .then(() => {
@@ -99,6 +104,29 @@ router.get('/types', (req, res) => {
                      res.sendStatus(500);
                  });
          });
+
+
+    router.get('/myinventory', (req, res) => {
+        // return all categories
+        const queryText = `SELECT * FROM "my_inventory" ORDER BY "id";`;
+        pool.query(queryText)
+            .then((result) => {
+                res.send(result.rows);
+            })
+            .catch((err) => {
+                console.log('Error getting types data', err);
+                res.sendStatus(500);
+            });
+    });
+
+          router.delete('myinventory/:id', (req, res) => {
+              pool.query('DELETE FROM my_inventory WHERE id=$1', [req.params.id]).then((result) => {
+                  res.sendStatus(200);
+              }).catch((error) => {
+                  console.log('Error DELETE /discs', error);
+                  res.sendStatus(500);
+              })
+          });
     
 
 module.exports = router;
