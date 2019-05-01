@@ -1,4 +1,4 @@
-import { put, takeEvery} from 'redux-saga/effects';
+import { put, takeEvery } from 'redux-saga/effects';
 import axios from 'axios';
 
 
@@ -6,6 +6,8 @@ function* deleteMyDisc(action) {
     console.log('Hit the deleteMyDisc', action);
     try {
         // Attempt deleting disc
+        console.log('payload', action.payload);
+
         yield axios.delete(`/api/discs/myinventory/${action.payload}`);
         yield put({
             type: 'SET_MY_DISCS'

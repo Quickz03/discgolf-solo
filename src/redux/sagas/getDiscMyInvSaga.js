@@ -1,4 +1,4 @@
-import { put, takeEvery} from 'redux-saga/effects';
+import { put, takeEvery } from 'redux-saga/effects';
 import axios from 'axios';
 
 
@@ -8,7 +8,7 @@ function* getMyDiscs(action) {
         const getResponse = yield axios.get('/api/discs/myinventory');
         console.log(`getResponse is: `, getResponse);
         const action = {
-            type: 'GET_MY_DISCS',
+            type: 'SET_MY_DISCS',
             payload: getResponse.data
         };
         yield put(action);
