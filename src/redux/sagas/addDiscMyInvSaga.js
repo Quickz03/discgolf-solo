@@ -4,11 +4,11 @@ import axios from 'axios';
 
 function* addDiscMyInv(action) {
     try {
-        console.log('action', action.payload);
-
+        console.log('addDiscMyInv // action.payload:', action.payload);
+        
         yield axios.post('/api/discs/myinventory', action.payload)
         yield put({
-            type: 'SET_MY_DISCS'
+            type: 'GET_MY_DISCS'
         })
     } catch (error) {
         console.log(`Couldn't add disc to your inventory`, action.payload, error);
