@@ -3,9 +3,9 @@ import axios from 'axios';
 
 
 function* deleteMyDisc(action) {
-    console.log('Hit the deleteDisc', action);
+    console.log('Hit the deleteMyDisc', action);
     try {
-        // Attempt deleting disc, then calling getDisc
+        // Attempt deleting disc
         yield axios.delete(`/api/discs/myinventory/${action.payload}`);
         yield put({
             type: 'SET_MY_DISCS'

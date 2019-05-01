@@ -1,4 +1,3 @@
-// import React from 'react';
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import './MyInventory.css';
@@ -9,10 +8,15 @@ import MyInventoryDelete from '../MyInventoryDelete/MyInventoryDelete';
 class MyInventory extends Component {
 
     //   componentDidMount() {
-    //     this.props.dispatch( {type: 'SET_MY_DISCS'} );
+    //     this.props.dispatch( {type: 'GET_MY_DISCS'} );
     // }
 
-
+    // deleteMyDisc = (mydisc)=>() => {
+    //   console.log('deleting from my inventory');
+    //   console.log(mydisc);
+    //   let action = { type: "DELETE_MY_DISCS", payload: mydisc };
+    //   this.props.dispatch(action);
+    // }
     
 
   render() {
@@ -35,6 +39,8 @@ class MyInventory extends Component {
   <br />
   <br /> 
 
+    {JSON.stringify(this.props.reduxState.mydiscs)}
+
     <table className="DiscLibTable" align="center">
       <thead>
         <tr>
@@ -50,8 +56,8 @@ class MyInventory extends Component {
       </thead>
       <tbody>
               {
-              this.props.reduxState.mydiscs.map(mydisc =>
-                  <tr key={mydisc.id} 
+              this.props.reduxState.mydiscs.map((mydisc, i) =>
+                  <tr key={i}
                   // onClick={this.showDisc}
                   >
                       <td>{mydisc.name}</td>
@@ -61,7 +67,8 @@ class MyInventory extends Component {
                       <td>{mydisc.fade}</td>
                       <td>{mydisc.plastic}</td>
                       <td>{mydisc.type}</td>
-                      <MyInventoryDelete mydisc={mydisc} />
+                      <MyInventoryDelete mydisc={mydisc.id} />
+                      {/* <td><button className='mydeleteButton' onClick={this.deleteMyDisc(mydisc)}>Delete Disc</button></td> */}
 
                   </tr>
               )}

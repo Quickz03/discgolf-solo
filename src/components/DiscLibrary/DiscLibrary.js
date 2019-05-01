@@ -18,8 +18,7 @@ class DiscLibrary extends Component {
 
     addDiscToInv = (disc) => {
       console.log('adding to my inventory');
-      console.log(disc);
-      
+      console.log(disc);      
       let action = { type: "ADD_MY_DISCS", payload: disc };
         this.props.dispatch(action);
     }
@@ -31,7 +30,7 @@ class DiscLibrary extends Component {
     }
 
   render() {
-    console.log('this.props', this.props);
+    // console.log('this.props', this.props);
     
     return (
       <>

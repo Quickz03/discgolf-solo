@@ -9,12 +9,14 @@ import '../App/App.css';
 class MyInventoryDelete extends Component {
 
 
-
     deleteMyDisc = (event) => {
         console.log('mydelete', event);
         console.log( `in deleteDisc` );
+        console.log('event target value', event.target.value );
+        
         // TODO DELETE disc item from my_inventory DB
-        let id = event.target.value;
+        let id = event.target.getAttribute('value');
+        
         this.props.dispatch( { type: 'DELETE_MY_DISCS', payload: id } );
     }
     
@@ -22,7 +24,7 @@ class MyInventoryDelete extends Component {
         console.log('this.props mydelete:', this.props );
         return(
                 <td>
-                    <button onClick={this.deleteMyDisc} value={this.props.disc}>Delete!</button>
+                    <button onClick={this.deleteMyDisc} value={this.props.mydisc}>Delete!</button>
                 </td>
         );
     }

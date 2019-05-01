@@ -17,7 +17,7 @@ class AdminTableDelete extends Component {
     }
     
     render(){
-        console.log('this.props:', this.props );
+        // console.log('this.props:', this.props );
         return(
                 <td>
                     <button color="primary" variant="contained"  onClick={this.deleteDisc} value={this.props.disc.id}>Delete!</button>
