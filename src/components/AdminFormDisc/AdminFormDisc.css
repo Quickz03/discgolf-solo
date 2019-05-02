@@ -1,5 +1,6 @@
 .adminHead {
     text-align: center;
+    font-family: 'Wendy One', sans-serif;
 }
 
 input[type=text] {
@@ -14,6 +15,3 @@ input[type=text] {
     background-color: white
 }
 
-.typeSelect {
-    float: right
-}

@@ -2,13 +2,16 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import './DiscLibrary.css';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 
 
 
 
 class DiscLibrary extends Component {
 
+    // state {
+    //   imageToShow
+    // }
 
     componentDidMount() {
         this.props.dispatch( {type: 'GET_DISCS'} );
@@ -25,8 +28,8 @@ class DiscLibrary extends Component {
 
     showDisc = () => {
       console.log('showing disc');
-      console.log('disc data:', this.props.reduxState.discs);    
-      ReactDOM.render( <p><img src="/images/BossDisc.png" alt="''" /></p>, document.getElementById('DiscImage') );
+      console.log('disc data:', this.props.reduxState.discs);   
+      
     }
 
   render() {
@@ -69,7 +72,7 @@ class DiscLibrary extends Component {
               {
               this.props.reduxState.discs.map((disc, i) =>
                   <tr key={disc.id} 
-                  // onClick={this.showDisc}
+                  onClick={() => this.showDisc(disc)}
                   >
                       <td>{disc.name}</td>
                       <td>{disc.speed}</td>

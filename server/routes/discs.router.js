@@ -122,8 +122,9 @@ router.get('/myinventory', (req, res) => {
     FROM "my_inventory"
     JOIN "disc_library" ON "my_inventory"."disc_id" = "disc_library"."id"
     JOIN "disc_type" on "disc_library"."type_id"="disc_type"."id"
-    ORDER BY "disc_library"."name";`;
-    pool.query(queryText)
+    WHERE "my_inventory"."user_id" = $1 
+    ORDER BY "disc_library"."name";` ;
+    pool.query(queryText, [req.user.id])
         .then((result) => {
             res.send(result.rows);
         })

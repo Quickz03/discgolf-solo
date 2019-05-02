@@ -14,7 +14,7 @@ class AdminDisc extends Component {
     render(){
         return(
             <Router>
-            <div>               
+            <div className="adminDiv">               
                 <AdminFormDisc />
                 <AdminTableDisc />
             </div>

@@ -1,5 +1,5 @@
 // myinventory render - will hold discs from server
-// action GET_MY_DISCS sent by saga with payload
+// action SET_MY_DISCS sent by saga with payload
 // Used to store discs returned from the server
 const mydiscs = (state = [], action) => {
     switch (action.type) {

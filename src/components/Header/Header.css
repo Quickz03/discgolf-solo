@@ -1,15 +1,21 @@
 .title {
     text-align: center;
-    color: rgb(0, 8, 255);
+    color: white;
     align-content: center;
     font-family: 'Wendy One', sans-serif;
-    
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .header {
     align-content: center;
-    color: blue;
-    background-color: chartreuse;
+    color: white;
+    background-color: #C32A38;
     margin-top: 0%;
     
+}
+
+element.style {
+    margin-top: 0px;
+    margin-bottom: 0px;
 }

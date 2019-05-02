@@ -30,6 +30,9 @@ class AdminFormDisc extends Component {
         }
     }
 
+
+    
+
     componentDidMount() {
         this.props.dispatch( {type: 'GET_TYPES'} );
     }
@@ -59,27 +62,34 @@ class AdminFormDisc extends Component {
     render(){
         return(
             <div>
-                <h2 className="adminHead">Admin Disc</h2>
+                <h1 className="adminHead">Admin Disc</h1>
                 <form className="adminForm" onSubmit={this.handleSubmit} >
                     <input type="text" placeholder="Disc Name" name="name"
+                            value={this.state.newDisc.name}
                             onChange={this.handleChange} />
                     <br /> 
                     <input type="text" placeholder="Plastic" name="plastic"
+                            value={this.state.newDisc.plastic}
                             onChange={this.handleChange} />
                     <br /> 
                     <input type="text" placeholder="Disc Image" name="image"
+                            value={this.state.newDisc.image}
                             onChange={this.handleChange} />
                     <br />   
                     <input type="text" placeholder="Speed" name="speed"
+                            value={this.state.newDisc.speed}
                             onChange={this.handleChange} />
                     <br /> 
                     <input type="text" placeholder="Glide" name="glide"
+                            value={this.state.newDisc.glide} 
                             onChange={this.handleChange} />
                     <br />
                     <input type="text" placeholder="Turn" name="turn"
+                            value={this.state.newDisc.turn}
                             onChange={this.handleChange} />
                     <br />
                     <input type="text" placeholder="Fade" name="fade"
+                            value={this.state.newDisc.fade}
                             onChange={this.handleChange} />
                     <br />
                     <select className="typeSelect" onChange={this.handleChange} name="type">
