@@ -9,9 +9,11 @@ import './DiscLibrary.css';
 
 class DiscLibrary extends Component {
 
-    // state {
-    //   imageToShow
-    // }
+    state =  {
+      imageToShow: '',
+      name: ''
+      
+    }
 
     componentDidMount() {
         this.props.dispatch( {type: 'GET_DISCS'} );
@@ -26,10 +28,13 @@ class DiscLibrary extends Component {
         this.props.dispatch(action);
     }
 
-    showDisc = () => {
+    showDisc = (disc) => {
       console.log('showing disc');
       console.log('disc data:', this.props.reduxState.discs);   
-      
+      this.setState({
+        imageToShow: disc.image, 
+        name: disc.name
+      })
     }
 
   render() {
@@ -41,7 +46,9 @@ class DiscLibrary extends Component {
             <h1>Disc Library</h1>
         </div>
           <div id="DiscImage">
-            <img src="/images/ApeDisc.png" alt="''" />
+            <img src={this.state.imageToShow} alt="" />
+            <br />
+            <p>{this.state.name}</p>
             <br />
             <div className="buttonZone">
             {/* <button className='addButton' onClick={this.addDiscToInv}>Add Disc</button> */}
