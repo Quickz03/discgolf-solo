@@ -3,29 +3,6 @@ import { connect } from 'react-redux';
 import '../App/App.css';
 import './AdminFormDisc.css';
 
-// import PropTypes from 'prop-types';
-// import { withStyles } from '@material-ui/core/styles';
-// import Button from '@material-ui/core/Button'
-// import TextField from '@material-ui/core/TextField';
-// import Typography from '@material-ui/core/Typography'
-// import Select from '@material-ui/core/Select';
-// import InputLabel from '@material-ui/core/InputLabel';
-// import Input from '@material-ui/core/Input';
-// import Form from '@material-ui/core/FormControl';
-// import { relative } from 'path';
-
-
-// const styles = theme => ({
-//     root: {
-//         width: '100%',
-//         marginTop: theme.spacing.unit * 6,
-//         overflowX: 'auto',
-//     },
-//     inputLabel: {
-//         position: 'relative',
-//     },
-
-// });
 
 const emptyDisc = {
     name: '',
@@ -80,11 +57,10 @@ class AdminFormDisc extends Component {
     }
 
     render(){
-        // const { classes } = this.props;
         return(
             <div>
                 <h2 className="adminHead">Admin Disc</h2>
-                <form onSubmit={this.handleSubmit} >
+                <form className="adminForm" onSubmit={this.handleSubmit} >
                     <input type="text" placeholder="Disc Name" name="name"
                             onChange={this.handleChange} />
                     <br /> 
@@ -94,7 +70,6 @@ class AdminFormDisc extends Component {
                     <input type="text" placeholder="Disc Image" name="image"
                             onChange={this.handleChange} />
                     <br />   
-                {/* <InputLabel className={classes.inputLabel} htmlFor="types">Select a Type</InputLabel>     */}
                     <select onChange={this.handleChange} name="type">  
                         <option selected disabled >Select a Tag</option>
                             {this.props.reduxState.types.map( discType => 
@@ -117,15 +92,12 @@ class AdminFormDisc extends Component {
                     <br /> 
                     <button color="secondary" variant="contained" type="submit" >Add Disc</button>
                 </form>
-                <pre>{JSON.stringify(this.state)}</pre>
+                {/* <pre>{JSON.stringify(this.state)}</pre> */}
             </div>
         );
     }
 }
 
-// AdminFormDisc.propTypes = {
-//     classes: PropTypes.object.isRequired,
-// };
 
 
 const mapReduxStateToProps = (reduxState) => ({

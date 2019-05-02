@@ -10,7 +10,7 @@ function* deleteMyDisc(action) {
 
         yield axios.delete(`/api/discs/myinventory/${action.payload}`);
         yield put({
-            type: 'SET_MY_DISCS'
+            type: 'GET_MY_DISCS'
         });
     } catch (error) {
         // Log and alert if an error occurs

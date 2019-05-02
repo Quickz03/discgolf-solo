@@ -3,29 +3,6 @@ import { connect } from 'react-redux';
 // import '../App/App.css';
 import AdminTableItem from '../AdminTableItem/AdminTableItem';
 
-// import PropTypes from 'prop-types';
-// import { withStyles } from '@material-ui/core/styles';
-// import Table from '@material-ui/core/Table';
-// import TableBody from '@material-ui/core/TableBody';
-// import TableCell from '@material-ui/core/TableCell';
-// import TableHead from '@material-ui/core/TableHead';
-// import TableRow from '@material-ui/core/TableRow';
-// import Paper from '@material-ui/core/Paper';
-// import Grid from '@material-ui/core/Grid';
-
-
-// const styles = theme => ({
-//     root: {
-//         width: '100%',
-//         marginTop: theme.spacing.unit * 6,
-//         overflowX: 'auto',
-//     },
-//     table: {
-//         width: '100%',
-//         // minWidth: '350',
-//     },
-
-// });
 
 class AdminTableDisc extends Component {
 
@@ -34,7 +11,6 @@ class AdminTableDisc extends Component {
     }
 
     render(){
-        // const { classes } = this.props;
         return(
         <table className="DiscLibTable" align="center">
             <thead>
@@ -70,9 +46,6 @@ class AdminTableDisc extends Component {
     }
 }
 
-// AdminTableDisc.propTypes = {
-//     classes: PropTypes.object.isRequired,
-// };
 
 const mapReduxStateToProps = (reduxState) => ({
     reduxState,

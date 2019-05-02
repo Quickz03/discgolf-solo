@@ -5,8 +5,7 @@ const mydiscs = (state = [], action) => {
     switch (action.type) {
         case 'SET_MY_DISCS':
         console.log('in mydisc reducer', action.payload);
-            state= [...state, action.payload]
-            return state;
+            return action.payload;
         default:
             return state;
     }
