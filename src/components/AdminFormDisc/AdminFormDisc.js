@@ -60,7 +60,7 @@ class AdminFormDisc extends Component {
         return(
             <div>
                 <h2 className="adminHead">Admin Disc</h2>
-                <form onSubmit={this.handleSubmit} >
+                <form className="adminForm" onSubmit={this.handleSubmit} >
                     <input type="text" placeholder="Disc Name" name="name"
                             onChange={this.handleChange} />
                     <br /> 

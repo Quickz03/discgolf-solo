@@ -105,9 +105,24 @@ router.post('/myinventory', (req, res) => {
 router.get('/myinventory', (req, res) => {
     // return all categories
     const queryText =
-        `SELECT "my_inventory"."id" AS "inventory_id", * FROM "my_inventory"
-                JOIN "disc_library" ON "my_inventory"."disc_id" = "disc_library"."id"
-                ORDER BY "disc_library"."name";`;
+    `SELECT "my_inventory"."id" AS "inventory_id",
+	"my_inventory"."user_id",
+	"my_inventory"."disc_id",	
+	"disc_library"."id",
+    "disc_library"."name", 
+    "disc_library"."speed", 
+    "disc_library"."glide",
+    "disc_library"."turn",
+    "disc_library"."fade",
+    "disc_library"."plastic",
+    "disc_library"."type_id",
+	"disc_library"."disc_image",
+	"disc_type"."id" as "disc_type_id",
+	"disc_type"."name" as "disc_type_name"
+    FROM "my_inventory"
+    JOIN "disc_library" ON "my_inventory"."disc_id" = "disc_library"."id"
+    JOIN "disc_type" on "disc_library"."type_id"="disc_type"."id"
+    ORDER BY "disc_library"."name";`;
     pool.query(queryText)
         .then((result) => {
             res.send(result.rows);

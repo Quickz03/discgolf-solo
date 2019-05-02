@@ -37,7 +37,7 @@ class MyInventory extends Component {
         <br />
         <br />
         <br />
-        
+
         <table className="DiscLibTable" align="center">
           <thead>
             <tr>
@@ -60,7 +60,7 @@ class MyInventory extends Component {
                 <td>{inventoryDisc.turn}</td>
                 <td>{inventoryDisc.fade}</td>
                 <td>{inventoryDisc.plastic}</td>
-                <td>{inventoryDisc.type}</td>
+                <td>{inventoryDisc.disc_type_name}</td>
                 <MyInventoryDelete inventoryDisc={inventoryDisc.inventory_id} />
               </tr>
             )}
