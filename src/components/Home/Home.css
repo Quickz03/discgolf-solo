@@ -6,23 +6,38 @@
     float: left;
     width: 23.53%;
     padding: 5px;
+    margin-left: 10px;
+    max-width: 80%;
     /* box-shadow: 3px 3px; */
 }
 
 
 .row::after {
-    content: "";
+    /* content: ""; */
     clear: both;
     display: flex;
+    margin-left: 20px;
+    
 
 }
 
 h4 {
     text-align: center;
     margin-bottom: 10px;
-    margin-top: 15px
+    margin-top: 15px;
+    font-family: 'Wendy One', sans-serif;
 }
 
 .Plastics {
     text-align: center;
+    font-family: 'Wendy One', sans-serif;
 }
+
+.home {
+font-family: 'Wendy One', sans-serif;
+}
+
+p {
+    font-size: 14px
+}
+

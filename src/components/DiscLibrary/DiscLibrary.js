@@ -2,13 +2,18 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import './DiscLibrary.css';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 
 
 
 
 class DiscLibrary extends Component {
 
+    state =  {
+      imageToShow: '',
+      name: ''
+      
+    }
 
     componentDidMount() {
         this.props.dispatch( {type: 'GET_DISCS'} );
@@ -23,10 +28,13 @@ class DiscLibrary extends Component {
         this.props.dispatch(action);
     }
 
-    showDisc = () => {
+    showDisc = (disc) => {
       console.log('showing disc');
-      console.log('disc data:', this.props.reduxState.discs);    
-      ReactDOM.render( <p><img src="/images/BossDisc.png" alt="''" /></p>, document.getElementById('DiscImage') );
+      console.log('disc data:', this.props.reduxState.discs);   
+      this.setState({
+        imageToShow: disc.image, 
+        name: disc.name
+      })
     }
 
   render() {
@@ -38,7 +46,9 @@ class DiscLibrary extends Component {
             <h1>Disc Library</h1>
         </div>
           <div id="DiscImage">
-            <img src="/images/ApeDisc.png" alt="''" />
+            <img src={this.state.imageToShow} alt="" />
+            <br />
+            <p>{this.state.name}</p>
             <br />
             <div className="buttonZone">
             {/* <button className='addButton' onClick={this.addDiscToInv}>Add Disc</button> */}
@@ -69,7 +79,7 @@ class DiscLibrary extends Component {
               {
               this.props.reduxState.discs.map((disc, i) =>
                   <tr key={disc.id} 
-                  // onClick={this.showDisc}
+                  onClick={() => this.showDisc(disc)}
                   >
                       <td>{disc.name}</td>
                       <td>{disc.speed}</td>
