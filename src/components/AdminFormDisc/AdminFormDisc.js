@@ -70,13 +70,6 @@ class AdminFormDisc extends Component {
                     <input type="text" placeholder="Disc Image" name="image"
                             onChange={this.handleChange} />
                     <br />   
-                    <select onChange={this.handleChange} name="type">  
-                        <option selected disabled >Select a Tag</option>
-                            {this.props.reduxState.types.map( discType => 
-                                <option value={discType.id} key={discType.id}>{discType.name}</option>
-                            )}
-                    </select>
-                    <br />
                     <input type="text" placeholder="Speed" name="speed"
                             onChange={this.handleChange} />
                     <br /> 
@@ -88,6 +81,13 @@ class AdminFormDisc extends Component {
                     <br />
                     <input type="text" placeholder="Fade" name="fade"
                             onChange={this.handleChange} />
+                    <br />
+                    <select className="typeSelect" onChange={this.handleChange} name="type">
+                        <option selected disabled >Select a Tag</option>
+                        {this.props.reduxState.types.map(discType =>
+                            <option value={discType.id} key={discType.id}>{discType.name}</option>
+                        )}
+                    </select>
                     <br />
                     <br /> 
                     <button color="secondary" variant="contained" type="submit" >Add Disc</button>
