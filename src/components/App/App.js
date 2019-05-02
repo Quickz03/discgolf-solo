@@ -14,6 +14,9 @@ import Home from '../Home/Home';
 import DiscLibrary from '../DiscLibrary/DiscLibrary';
 import AdminDisc from '../AdminDisc/AdminDisc';
 
+// import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+// import theme from '../App/theme';
+
 import './App.css';
 
 class App extends Component {
@@ -23,8 +26,9 @@ class App extends Component {
 
   render() {
     return (
+        // <MuiThemeProvider theme={theme}>
       <Router>
-        <div>
+        <div className="AppDiv">
           <Header />
           <Nav />
           <Switch>
@@ -32,7 +36,7 @@ class App extends Component {
             <Redirect exact from="/" to="/home" />
             {/* Visiting localhost:3000/myinventory will show the my inventory page.
             This is a route anyone can see, no login necessary */}
-            <Route
+            <ProtectedRoute
               exact
               path="/myinventory"
               component={MyInventory}
@@ -41,7 +45,7 @@ class App extends Component {
             Visiting localhost:3000/home will show the UserPage if the user is logged in.
             If the user is not logged in, the ProtectedRoute will show the 'Login' or 'Register' page.
             Even though it seems like they are different pages, the user is always on localhost:3000/home */}
-            <ProtectedRoute
+            <Route
               exact
               path="/home"
               component={Home}
@@ -53,17 +57,24 @@ class App extends Component {
               path="/disclibrary"
               component={DiscLibrary}
             />
-            {/* If none of the other routes matched, we will show a 404. */}
-            <Route render={() => <h1>404</h1>} />
-          </Switch>
-          <Footer />
-            <Route
+
+            < ProtectedRoute
               exact
               path="/admin"
               component={AdminDisc}
             /> 
+            {/* If none of the other routes matched, we will show a 404. */}
+            <Route render={() => <h1>404</h1>} />
+          </Switch>
+          {/* <Footer /> */}
+            {/* <Route
+              exact
+              path="/admin"
+              component={AdminDisc}
+            />  */}
         </div>
       </Router>
+      // </MuiThemeProvider>
   )}
 }
 

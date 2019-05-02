@@ -1,26 +1,46 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import LogOutButton from '../LogOutButton/LogOutButton';
 
-// this could also be written with destructuring parameters as:
-// const Home = ({ user }) => (
-// and then instead of `props.user.username` you could use `user.username`
-const Home = (props) => (
-  <div>
-    <h1 id="welcome">
-      Welcome to My Starter Disc { props.user.username }!
-    </h1>
+import './Home.css';
 
-    <LogOutButton className="log-in" />
-  </div>
-);
+class Home extends Component {
+  render() {
+      return (
+      <>
+        <div>
+          <h1 className="home">
+            Home
+          </h1>
+        </div>
+        <div className="ratings">
+          <img src="/images/flight-ratings2.png" alt="''" />
+        </div>
+      <div className="row">
+      <h3 className="Plastics">Plastics</h3>
+        <div className="column">
+        <h4>Star</h4>
+          <img src="/images/StarPlastic2.png" alt="''" />
+        </div>
+        <div className="column">
+        <h4>Champion</h4>
+          <img src="/images/ChampionPlastic2.png" alt="''" />
+        </div>
+        <div className="column">
+        <h4>Pro</h4>
+          <img src="/images/ProPlastic2.png" alt="''" />
+        </div>
+        <div className="column">
+        <h4>DX</h4>
+          <img src="/images/DXPlastic2.png" alt="''" />
+        </div>
+      </div>  
+      </>
+    )}
+}
 
-// Instead of taking everything from state, we just want the user info.
-// if you wanted you could write this code like this:
-// const mapStateToProps = ({user}) => ({ user });
-const mapStateToProps = state => ({
-  user: state.user,
+
+const mapReduxStateToProps = (reduxState) => ({
+  reduxState,
 });
 
-// this allows us to use <App /> in index.js
-export default connect(mapStateToProps)(Home);
+export default connect(mapReduxStateToProps)(Home);

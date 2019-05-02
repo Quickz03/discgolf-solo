@@ -1,4 +1,4 @@
-import { put, } from 'redux-saga/effects';
+import { put, takeEvery} from 'redux-saga/effects';
 import axios from 'axios';
 
 
@@ -21,8 +21,8 @@ function* getDiscs(action) {
 } //   end getDiscs
 
 
-// function* getDiscs() {
-//     yield takeEvery('DISC', getDiscs);
-// }
+function* getDiscsSaga() {
+    yield takeEvery('GET_DISCS', getDiscs);
+}
 
-export default getDiscs;
+export default getDiscsSaga;

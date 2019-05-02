@@ -1,15 +1,42 @@
-.DiscLibTable, th, tr, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-    
+table {  
+    color: #333;
+    font-family: Helvetica, Arial, sans-serif;
+    width: 640px; 
+    border-collapse: 
+    collapse; border-spacing: 0; 
 }
 
-th {
-    background-color: #4CAF50;
-    color: white;
+td, th {  
+    border: 1px solid; /* No more visible border */
+    height: 30px; 
+    transition: all 0.3s;  /* Simple transition for hover effect */
 }
 
-tr:hover {
-    background-color: #faf30e;
+th {  
+    background: #DFDFDF;  /* Darken header a bit */
+    font-weight: bold;
 }
 
+td {  
+    background: rgb(230, 129, 129);
+    text-align: center;
+}
+ 
+
+tr:hover { background-color: rgb(231, 27, 27); color: rgb(34, 17, 222); }  
+/* Hover cell effect! */
+
+#DiscImage {
+ width:160px;   
+ margin-left: 50px;
+}
+
+.buttonZone {
+    width:70px;
+ margin-left: auto;
+ margin-right: auto;
+}
+.addButton {
+margin-left: auto;
+margin-right: auto;
+}

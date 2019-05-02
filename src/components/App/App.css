@@ -1,7 +1,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0px;
-    background-color: rgb(247, 247, 247)
+    background-color: rgb(250, 250, 250)
 }
 
 .alert {
@@ -12,7 +12,7 @@ body {
 form {
     background-color: #dbd5d5;
     width: 30%;
-    height: 250px;
+    height: 300px;
     margin: 20px auto;
     padding: 25px;
     border-radius: 2px;
@@ -54,3 +54,5 @@ input {
 /* color: blue; */
 text-align: center
 }
+
+

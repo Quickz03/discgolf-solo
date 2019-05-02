@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {HashRouter as Router, Route, Redirect, Switch, } from 'react-router-dom';
+import {HashRouter as Router, } from 'react-router-dom';
 
 import '../App/App.css';
 
@@ -27,4 +27,4 @@ const mapReduxStateToProps = (reduxState) => ({
     reduxState,
   });
   
-  export default connect( mapReduxStateToProps )(AdminDisc);
+  export default connect(mapReduxStateToProps)(AdminDisc);
