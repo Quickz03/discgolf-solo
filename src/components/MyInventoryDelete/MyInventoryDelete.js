@@ -13,12 +13,13 @@ class MyInventoryDelete extends Component {
         // TODO DELETE disc item from my_inventory DB
         let id = event.target.getAttribute('value');
         this.props.dispatch({ type: 'DELETE_MY_DISCS', payload: id });
+        alert("Your disc has been deleted!!");
     }
 
     render() {        
         return (
             <td>
-                <button onClick={this.deleteMyDisc} value={this.props.inventoryDisc}>Delete!</button>
+                <button className="deleteButton" onClick={this.deleteMyDisc} value={this.props.inventoryDisc}>Delete!</button>
             </td>
         );
     }
