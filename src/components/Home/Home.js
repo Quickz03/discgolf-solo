@@ -27,6 +27,9 @@ class Home extends Component {
         <div className="ratings">
           <h3 className="Plastics"> Disc Ratings</h3>
           <img src="/images/flightchart-disc.jpg" alt="''" />
+            <div className="demodisc">
+              <img src="/images/discWithRatings.jpg" alt="'" />
+            </div>
         </div>
     </div>
       <div className="row">
