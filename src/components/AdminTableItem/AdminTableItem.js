@@ -14,13 +14,14 @@ class AdminTableDelete extends Component {
         // TODO DELETE disc item from DB
         let id = event.target.value;
         this.props.dispatch( { type: 'DELETE_DISCS', payload: id } );
+        alert("The disc has been deleted!");
     }
     
     render(){
         // console.log('this.props:', this.props );
         return(
                 <td>
-                    <button color="primary" variant="contained"  onClick={this.deleteDisc} value={this.props.disc.id}>Delete!</button>
+                    <button className="deleteButton"  onClick={this.deleteDisc} value={this.props.disc.id}>Delete!</button>
                 </td>
         );
     }

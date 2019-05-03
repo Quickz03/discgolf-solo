@@ -47,11 +47,24 @@ class AdminFormDisc extends Component {
         });
     }
 
+
+    editDisc = (disc) => {
+        console.log('showing disc');
+        console.log('disc data:', this.props.reduxState.discs);
+        this.setState({
+            newDisc: {
+            name: disc.name,
+            // name: disc.name
+            }
+        })
+    }
+
     handleSubmit = (event) => {
         event.preventDefault();
         console.log( `in handleSubmit` );
         // TODO! POST new disc to DB
         this.props.dispatch( {type: 'ADD_DISCS', payload: this.state.newDisc} );
+        alert("The disc has been added to the library!");
         this.setState({
             newDisc: {
                 ...emptyDisc
@@ -62,14 +75,10 @@ class AdminFormDisc extends Component {
     render(){
         return(
             <div>
-                <h1 className="adminHead">Admin Disc</h1>
+                <h1 className="adminHead">Admin</h1>
                 <form className="adminForm" onSubmit={this.handleSubmit} >
                     <input type="text" placeholder="Disc Name" name="name"
                             value={this.state.newDisc.name}
-                            onChange={this.handleChange} />
-                    <br /> 
-                    <input type="text" placeholder="Plastic" name="plastic"
-                            value={this.state.newDisc.plastic}
                             onChange={this.handleChange} />
                     <br /> 
                     <input type="text" placeholder="Disc Image" name="image"
@@ -92,15 +101,18 @@ class AdminFormDisc extends Component {
                             value={this.state.newDisc.fade}
                             onChange={this.handleChange} />
                     <br />
+                    <input type="text" placeholder="Plastic" name="plastic"
+                        value={this.state.newDisc.plastic}
+                        onChange={this.handleChange} />
+                    <br />
                     <select className="typeSelect" onChange={this.handleChange} name="type">
-                        <option selected disabled >Select a Tag</option>
+                        <option>Select a Type</option>
                         {this.props.reduxState.types.map(discType =>
                             <option value={discType.id} key={discType.id}>{discType.name}</option>
                         )}
                     </select>
                     <br />
-                    <br /> 
-                    <button color="secondary" variant="contained" type="submit" >Add Disc</button>
+                    <button className="addButton" type="submit" >Add Disc</button>
                 </form>
                 {/* <pre>{JSON.stringify(this.state)}</pre> */}
             </div>

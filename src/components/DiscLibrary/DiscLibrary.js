@@ -26,6 +26,7 @@ class DiscLibrary extends Component {
       console.log(disc);      
       let action = { type: "ADD_MY_DISCS", payload: disc };
         this.props.dispatch(action);
+        alert("The disc has been added to your inventory!");
     }
 
     showDisc = (disc) => {
@@ -48,7 +49,7 @@ class DiscLibrary extends Component {
           <div id="DiscImage">
             <img src={this.state.imageToShow} alt="" />
             <br />
-            <p>{this.state.name}</p>
+            <p className="imageName">{this.state.name}</p>
             <br />
             <div className="buttonZone">
             {/* <button className='addButton' onClick={this.addDiscToInv}>Add Disc</button> */}

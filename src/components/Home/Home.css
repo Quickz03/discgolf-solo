@@ -1,5 +1,7 @@
 .ratings {
-    text-align: center
+    text-align: center;
+    align-content: center;
+    /* padding-right: 150px */
 }
 
 .column {
@@ -41,3 +43,18 @@ p {
     font-size: 14px
 }
 
+/* .tipsHeader {
+    margin-left: 20px;
+    font-family: 'Wendy One', sans-serif;
+}
+
+.tipsList {
+    font-size: 14px;
+    width:40%;
+    margin-right: 10px
+}
+
+.topInfo {
+    display: flex;
+    padding-inline-end: 10px;
+} */
