@@ -23,6 +23,7 @@ class AdminTableDisc extends Component {
                 <th>Plastic</th>
                 <th>Type</th>
                 <th>Delete</th>
+                <th>Update</th>
               </tr>
             </thead>
             <tbody>
