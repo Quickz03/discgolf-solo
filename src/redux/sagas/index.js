@@ -8,8 +8,8 @@ import postDiscSaga from './postDiscSaga';
 import deleteDiscSaga from './deleteDiscSaga';
 import getMyDiscsSaga from './getDiscMyInvSaga';
 import addMyDiscSaga from './addDiscMyInvSaga';
-import deleteMyDiscSaga from './deleteMyDiscSaga'
-
+import deleteMyDiscSaga from './deleteMyDiscSaga';
+// import updateDiscSaga from './updateDiscSaga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -30,5 +30,6 @@ export default function* rootSaga() {
     getMyDiscsSaga(),
     addMyDiscSaga(),
     deleteMyDiscSaga(),
+    // updateDiscSaga(),
   ]);
 }

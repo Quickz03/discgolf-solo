@@ -1,6 +1,7 @@
 .ratings {
     text-align: center;
     align-content: center;
+    /* display: inline-block */
     /* padding-right: 150px */
 }
 
@@ -19,8 +20,6 @@
     clear: both;
     display: flex;
     margin-left: 20px;
-    
-
 }
 
 h4 {
@@ -42,6 +41,11 @@ font-family: 'Wendy One', sans-serif;
 p {
     font-size: 14px
 }
+
+.demodisc {
+    width: 220px;
+}
+
 
 /* .tipsHeader {
     margin-left: 20px;

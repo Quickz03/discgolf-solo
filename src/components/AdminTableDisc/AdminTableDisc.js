@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import '../App/App.css';
 import AdminTableItem from '../AdminTableItem/AdminTableItem';
-
+// import AdminTableUpdate from '../AdminTableUpdate/AdminTableUpdate';
 
 class AdminTableDisc extends Component {
 
     componentDidMount() {
         this.props.dispatch( {type: 'GET_DISCS'} );
     }
+
+
 
     render(){
         return(
@@ -23,7 +25,7 @@ class AdminTableDisc extends Component {
                 <th>Plastic</th>
                 <th>Type</th>
                 <th>Delete</th>
-                <th>Update</th>
+                {/* <th>Update</th> */}
               </tr>
             </thead>
             <tbody>
@@ -38,6 +40,7 @@ class AdminTableDisc extends Component {
                       <td>{disc.plastic}</td>
                       <td>{disc.type}</td>
                       <AdminTableItem disc={disc} />
+                      {/* <AdminTableUpdate disc={disc} /> */}
                   </tr>
               )}
             </tbody>

@@ -147,4 +147,22 @@ router.delete('/myinventory/:id', (req, res) => {
 });
 
 
+router.put('admin/:id', (req, res) => {
+    console.log('in SERVER PUT');
+    let discId = req.params.id;
+    console.log('discId is', discId);
+    let sqlText = `UPDATE "disc_library" 
+                   SET ("name", "speed", "glide", "turn", "fade", "plastic", "type_id", "disc_image")
+                   VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+                   WHERE "id" = $1;`;
+    pool.query(sqlText, [discId])
+        .then((result) => {
+            res.sendStatus(200);
+        }).catch((error) => {
+            console.log('Failed to update disc information', error);
+            res.sendStatus(500);
+        })
+})
+
+
 module.exports = router;

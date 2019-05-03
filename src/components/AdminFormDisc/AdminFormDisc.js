@@ -20,13 +20,13 @@ class AdminFormDisc extends Component {
     state = {
         newDisc: {
             name: '',
-            plastic: '',
-            type: '',
+            image: '',
             speed: '',
             glide: '',
             turn: '',
             fade: '',
-            image: '',
+            plastic: '',
+            type: '',
         }
     }
 
@@ -48,16 +48,22 @@ class AdminFormDisc extends Component {
     }
 
 
-    editDisc = (disc) => {
-        console.log('showing disc');
-        console.log('disc data:', this.props.reduxState.discs);
-        this.setState({
-            newDisc: {
-            name: disc.name,
-            // name: disc.name
-            }
-        })
-    }
+    // editDisc = (disc) => {
+    //     console.log('showing disc');
+    //     console.log('disc data:', this.props.reduxState.discs);
+    //     this.setState({
+    //         newDisc: {
+    //         name: disc.name,
+    //         image: disc.image,
+    //         speed: disc.speed,
+    //         glide: disc.glide,
+    //         turn: disc.turn,
+    //         fade: disc.fade,
+    //         plastic: disc.plastic,
+    //         type: disc.type,           
+    //         }
+    //     })
+    // }
 
     handleSubmit = (event) => {
         event.preventDefault();
