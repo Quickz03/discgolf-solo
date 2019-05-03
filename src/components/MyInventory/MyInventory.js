@@ -50,13 +50,13 @@ class MyInventory extends Component {
               {/* <button className='addButton' onClick={this.addDiscToInv}>Add Disc</button> */}
             </div>
         </div>
+        {/* <br />
         <br />
         <br />
         <br />
         <br />
         <br />
-        <br />
-        <br />
+        <br /> */}
 
         <table className="DiscLibTable" align="center">
           <thead>
