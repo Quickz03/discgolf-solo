@@ -12,7 +12,7 @@ class AdminTableUpdate extends Component {
 
     editDisc = (disc) => {
         console.log('showing disc');
-        console.log('disc data:', this.props.reduxState.discs);
+        console.log('disc data:', this.props.reduxState.disc);
         this.props.setState({
             newDisc: {
                 name: disc.name,

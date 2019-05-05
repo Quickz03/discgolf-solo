@@ -5,14 +5,14 @@ import './AdminFormDisc.css';
 
 
 const emptyDisc = {
-    name: '',
-    plastic: '',
-    type: '',
-    speed: '',
-    glide: '',
-    turn: '',
-    fade: '',
-    image: '',
+    name: 'Boss',
+    plastic: 'Champion',
+    type: '1',
+    speed: '13',
+    glide: '5',
+    turn: '-1',
+    fade: '3',
+    image: '/images/BossDisc.png',
 }
 
 class AdminFormDisc extends Component {
@@ -64,6 +64,15 @@ class AdminFormDisc extends Component {
     //         }
     //     })
     // }
+
+    autoFill = () => {
+        console.log(`in autofill`);
+        this.setState({
+            newDisc: {
+                ...emptyDisc
+            }
+        })
+    }
 
     handleSubmit = (event) => {
         event.preventDefault();
@@ -120,6 +129,7 @@ class AdminFormDisc extends Component {
                     <br />
                     <button className="addButton" type="submit" >Add Disc</button>
                 </form>
+                <button className="autofill" onClick={this.autoFill} >Add values</button>
                 {/* <pre>{JSON.stringify(this.state)}</pre> */}
             </div>
         );

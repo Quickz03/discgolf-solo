@@ -48,7 +48,7 @@ class LoginPage extends Component {
             <label htmlFor="username">
               Username:
               <input
-                type="text"
+                // type="text"
                 name="username"
                 value={this.state.username}
                 onChange={this.handleInputChangeFor('username')}

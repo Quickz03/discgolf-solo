@@ -18,13 +18,14 @@ form {
     border-radius: 2px;
 }
 
+
 input {
     margin: 5px;
     margin-bottom: 10px;
 }
 
 .log-in, .log-out, .register {
-  background-color: #00acb0;
+  background-color: #C32A38;
   border-radius: 4px;
   color: #f8f8f8;
   min-height: 50px;

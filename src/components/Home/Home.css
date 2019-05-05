@@ -42,8 +42,10 @@ p {
     font-size: 14px
 }
 
-.demodisc {
+.demodisc1 {
     width: 220px;
+    display: inline-block
+    
 }
 
 
