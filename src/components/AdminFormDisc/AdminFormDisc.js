@@ -4,7 +4,7 @@ import '../App/App.css';
 import './AdminFormDisc.css';
 
 
-const emptyDisc = {
+const fillDisc = {
     name: 'Boss',
     plastic: 'Champion',
     type: '1',
@@ -13,6 +13,17 @@ const emptyDisc = {
     turn: '-1',
     fade: '3',
     image: '/images/BossDisc.png',
+}
+
+const emptyDisc = {
+    name: '',
+    plastic: '',
+    type: '',
+    speed: '',
+    glide: '',
+    turn: '',
+    fade: '',
+    image: '',
 }
 
 class AdminFormDisc extends Component {
@@ -30,8 +41,6 @@ class AdminFormDisc extends Component {
         }
     }
 
-
-    
 
     componentDidMount() {
         this.props.dispatch( {type: 'GET_TYPES'} );
@@ -69,7 +78,7 @@ class AdminFormDisc extends Component {
         console.log(`in autofill`);
         this.setState({
             newDisc: {
-                ...emptyDisc
+                ...fillDisc
             }
         })
     }

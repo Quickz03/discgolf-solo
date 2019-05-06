@@ -29,12 +29,15 @@ class Home extends Component {
           <img src="/images/flightchart-disc.jpg" alt="''" />
           <h3 className="Plastics">Recommended Starter Set </h3>
             <div className="demodisc1">
+              <h4>Driver</h4>
               <img src="/images/BeastDisc.jpg" alt="'" />
             </div>
               <div className="demodisc1">
+                <h4>Midrange</h4>
                 <img src="/images/CobraDisc.jpg" alt="'" />
               </div>
               <div className="demodisc1">
+                <h4>Putter</h4>
                 <img src="/images/BirdieDisc.jpg" alt="'" />
               </div>
         </div>
